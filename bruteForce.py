@@ -31,3 +31,7 @@ def main():
     FILEOUTPUT = open(sys.argv[2], 'w')
     FILEOUTPUT.write(outputtext)
     FILEOUTPUT.close()
+
+if __name__ == "__main__":
+    main()
+
