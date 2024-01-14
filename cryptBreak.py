@@ -13,15 +13,15 @@ def main():
              '''decrypted output file''')
 
     key = None                                                          
-    if sys.version_info[0] == 3:                                                #(L)
-        key = input("\nEnter key: ")                                            #(M)
+    if sys.version_info[0] == 3: 
+        key = input("\nEnter key: ")  
     else:                                                               
-        key = raw_input("\nEnter key: ")                                        #(N)
+        key = raw_input("\nEnter key: ")
     key = key.strip()
 
-    key_bv = BitVector(bitlist = [0]*BLOCKSIZE)                                 #(P)
-    for i in range(0, len(key) // numbytes):                                     #(Q)
-        keyblock = key[i * numbytes: (i + 1) * numbytes]                               #(R)
+    key_bv = BitVector(bitlist = [0]*BLOCKSIZE)
+    for i in range(0, len(key) // numbytes): 
+        keyblock = key[i * numbytes: (i + 1) * numbytes]   
         key_bv ^= BitVector(textstring = keyblock)
     
     decryptText = cryptBreak(sys.argv[1], key_bv)
