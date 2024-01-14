@@ -35,7 +35,7 @@ def cryptBreak(ciphertextFile, key_bv):
     
     bv_iv = BitVector(bitlist = [0] * BLOCKSIZE)
     for i in range(0, len(PassPhrase) // numbytes):
-        teststr = PassPhrase[i * numbytes: (i + 1) * numbytes]
+        textstr = PassPhrase[i * numbytes: (i + 1) * numbytes]
         bv_iv ^= BitVector(textstring = textstr)
     
     FILEIN = open(ciphertextFile, 'r')
